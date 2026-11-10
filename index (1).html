@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SPC 2026 Grand Finale – Day-of Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF3F5; --surface:#FFFFFF; --ink:#1B2530; --muted:#5D6C78; --line:#D3DDE3;
+  --navy:#12324A; --signal:#F2B33D; --sea:#2A7F8E; --sea-soft:#DCEEF0; --navy-soft:#E1E8EF; --grey-soft:#EBEDEF; --signal-soft:#FDF1D8;
+  --hero-ink:#FFFFFF;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1E29; --surface:#162837; --ink:#E6EEF2; --muted:#9AAAB6; --line:#26404F;
+    --navy:#0B2333; --signal:#F2B33D; --sea:#5CB6C4; --sea-soft:#163C45; --navy-soft:#1D3448; --grey-soft:#1F2D38; --signal-soft:#3A3020;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1E29; --surface:#162837; --ink:#E6EEF2; --muted:#9AAAB6; --line:#26404F;
+  --navy:#0B2333; --signal:#F2B33D; --sea:#5CB6C4; --sea-soft:#163C45; --navy-soft:#1D3448; --grey-soft:#1F2D38; --signal-soft:#3A3020;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 "Barlow",system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",system-ui,sans-serif}
+a{color:inherit}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.view{display:none}.view.on{display:block}
+
+/* masthead */
+.mast{background:var(--navy);color:var(--hero-ink);padding:18px 20px 16px}
+.mast .wrap{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.mast a.home{text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:24px;letter-spacing:.01em}
+.mast .sub{opacity:.75;font-size:14px}
+.mast nav{margin-left:auto;display:flex;gap:4px}
+.mast nav a{text-decoration:none;padding:6px 12px;border-radius:999px;font-weight:500;font-size:14px;opacity:.8}
+.mast nav a[aria-current="page"]{background:var(--signal);color:#12324A;opacity:1}
+
+/* home */
+.hero{background:var(--navy);color:var(--hero-ink);padding:56px 20px 0;overflow:hidden}
+.hero .wrap{max-width:1000px;margin:0 auto}
+.hero p.kicker{margin:0 0 6px;opacity:.75;font-size:16px}
+.hero h1{margin:0;font-size:clamp(56px,11vw,128px);line-height:.88;font-weight:700;letter-spacing:-.01em}
+.hero .meta{margin:18px 0 0;font-size:17px;opacity:.9}
+.strip{margin:44px 0 0;display:flex;height:64px;border-top:2px solid var(--signal)}
+.strip div{position:relative;border-right:1px solid rgba(255,255,255,.18);padding:8px 8px 0;font-size:12px;line-height:1.2;color:rgba(255,255,255,.85);overflow:hidden}
+.strip div b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:600;color:#fff}
+.strip .main{background:rgba(242,179,61,.16)}
+.cards{max-width:1000px;margin:36px auto 0;padding:0 20px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--sea);border-radius:6px;padding:22px 22px 20px}
+.card:nth-child(2){border-left-color:var(--signal)}
+.card h2{margin:0 0 6px;font-size:30px;font-weight:600}
+.card p{margin:0;color:var(--muted)}
+.card:hover{border-color:var(--sea)}
+.facts{max-width:1000px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;color:var(--muted)}
+.facts h3{margin:0 0 4px;color:var(--ink);font-size:20px;font-weight:600}
+.facts p{margin:0}
+
+/* toolbar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar .wrap{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{border:0;background:none;padding:5px 12px;cursor:pointer;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.chip{border:1px solid var(--line);background:none;border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sea);border-color:var(--sea);color:#fff}
+select,input[type=search]{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:5px 9px;font-size:14px}
+input[type=search]{min-width:160px;flex:1 1 160px;max-width:260px}
+.grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.grp>span{font-size:13px;color:var(--muted)}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:5px 12px;cursor:pointer;font-size:14px}
+
+/* timeline */
+.tl{max-width:1180px;margin:0 auto;padding:20px 20px 64px}
+.phase{margin:28px 0 10px;display:flex;align-items:baseline;gap:12px}
+.phase h2{margin:0;font-size:28px;font-weight:600}
+.phase span{color:var(--muted);font-size:14px}
+.row{display:grid;grid-template-columns:120px 1fr;gap:0 20px;background:var(--surface);border:1px solid var(--line);border-radius:6px;margin-bottom:10px;padding:16px 18px}
+.row.key{border-left:6px solid var(--signal)}
+.when .t{font-family:"Barlow Condensed",sans-serif;font-size:24px;font-weight:600;line-height:1}
+.when .e{color:var(--muted);font-size:13px;margin-top:4px}
+.when .d{display:inline-block;margin-top:6px;font-size:12px;background:var(--grey-soft);border-radius:4px;padding:1px 6px}
+.what h3{margin:0;font-size:22px;font-weight:600;line-height:1.15}
+.what .sub{margin:2px 0 0;color:var(--muted);font-size:14px;white-space:pre-line}
+.loc{display:inline-block;margin-top:8px;font-size:13px;color:var(--sea);font-weight:600}
+.rem{margin:10px 0 0;padding:8px 12px;background:var(--signal-soft);border-radius:4px;font-size:14px;white-space:pre-line}
+.tasks{margin:12px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.tasks li{border:1px solid var(--line);border-radius:5px;padding:8px 10px;font-size:14px}
+.tasks li.g0{border-top:3px solid var(--sea)}.tasks li.g1{border-top:3px solid var(--navy-line,#3B6A8C)}.tasks li.g2{border-top:3px solid var(--muted)}
+.tasks .who{font-weight:600;font-size:13px}
+.tasks .pic{color:var(--muted);font-size:12px;display:block}
+.tasks .txt{white-space:pre-line;margin-top:4px}
+.tasks .until{display:inline-block;margin-top:6px;font-size:12px;color:var(--sea);font-weight:600}
+.empty{padding:40px 0;color:var(--muted)}
+.notes{margin-top:28px}
+mark{background:var(--signal);color:#12324A;border-radius:2px}
+
+/* overview */
+.ov{padding:16px 20px 48px}
+.legend{max-width:1180px;margin:0 auto 12px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.scroller{overflow:auto;max-height:calc(100vh - 170px);border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.grid{display:grid;position:relative}
+.grid .h{position:sticky;top:0;z-index:3;background:var(--surface);border-bottom:2px solid var(--line);padding:8px;font-size:13px;line-height:1.25}
+.grid .h b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:600}
+.grid .h small{color:var(--muted)}
+.grid .h.g0{box-shadow:inset 0 4px 0 var(--sea)}.grid .h.g1{box-shadow:inset 0 4px 0 #3B6A8C}.grid .h.g2{box-shadow:inset 0 4px 0 var(--muted)}
+.grid .corner{left:0;z-index:4}
+.grid .tc{position:sticky;left:0;z-index:2;background:var(--surface);border-right:2px solid var(--line);border-bottom:1px solid var(--line);padding:8px;font-size:13px}
+.grid .tc .t{font-family:"Barlow Condensed",sans-serif;font-size:18px;font-weight:600;line-height:1}
+.grid .tc .s{display:block;margin-top:3px;white-space:pre-line;line-height:1.25}
+.grid .tc .l{display:block;color:var(--sea);font-size:12px;margin-top:3px}
+.grid .ph{grid-column:1/-1;background:var(--navy);color:#fff;padding:5px 10px;font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:600;position:sticky;left:0}
+.grid .ph span{position:sticky;left:10px}
+.grid .cell{border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:44px}
+.grid .task{margin:3px;border-radius:5px;padding:6px 8px;font-size:12.5px;line-height:1.3;white-space:pre-line;z-index:1}
+.task.g0{background:var(--sea-soft)}.task.g1{background:var(--navy-soft)}.task.g2{background:var(--grey-soft)}
+.task.span{border-left:3px solid var(--signal)}
+.dim{opacity:.18}
+
+@media (max-width:640px){
+  .row{grid-template-columns:1fr}
+  .when{display:flex;gap:10px;align-items:baseline;margin-bottom:8px}
+  .when .e,.when .d{margin:0}
+  .mast nav{margin-left:0}
+}
+@media print{
+  .bar,.mast nav,body::before{display:none}
+  .mast{background:none;color:#000;padding:0 0 8px}
+  body{background:#fff;color:#000}
+  .row{break-inside:avoid;border-color:#bbb}
+  .scroller{max-height:none;overflow:visible}
+}
+</style>
+</head>
+<body>
+
+<section class="view" id="v-home">
+  <div class="hero"><div class="wrap">
+    <p class="kicker">PIER71 Smart Port Challenge 2026</p>
+    <h1>SPC 2026<br>Grand Finale</h1>
+    <p class="meta">Wednesday, 11 November 2026, with setup on 10 November</p>
+    <div class="strip" id="strip" aria-label="Day at a glance"></div>
+  </div></div>
+  <div class="cards">
+    <a class="card" href="#overview"><h2>Overview</h2><p>Swimlane of the whole day. Every role side by side, so you can see who is doing what at each segment.</p></a>
+    <a class="card" href="#timeline"><h2>Detailed timeline</h2><p>Full run of show with locations, remarks and each role’s tasks. Filter by person, venue, phase or keyword.</p></a>
+  </div>
+  <div class="facts" id="facts"></div>
+</section>
+
+<section class="view" id="v-overview">
+  <header class="mast"><div class="wrap"><a class="home" href="#">SPC 2026 Grand Finale</a><span class="sub">Overview</span>
+    <nav><a href="#overview" aria-current="page">Overview</a><a href="#timeline">Timeline</a></nav></div></header>
+  <div class="bar"><div class="wrap">
+    <div class="seg" id="ov-day"></div>
+    <label class="grp"><span>Highlight</span><select id="ov-person"></select></label>
+  </div></div>
+  <div class="ov">
+    <div class="legend"><span><i style="background:var(--sea)"></i>Start-ups</span><span><i style="background:#3B6A8C"></i>Organising team</span><span><i style="background:var(--muted)"></i>Event support</span><span><i style="background:var(--signal)"></i>Task runs across several segments</span></div>
+    <div class="scroller"><div class="grid" id="ov-grid"></div></div>
+  </div>
+</section>
+
+<section class="view" id="v-timeline">
+  <header class="mast"><div class="wrap"><a class="home" href="#">SPC 2026 Grand Finale</a><span class="sub">Detailed timeline</span>
+    <nav><a href="#overview">Overview</a><a href="#timeline" aria-current="page">Timeline</a></nav></div></header>
+  <div class="bar"><div class="wrap">
+    <div class="seg" id="tl-day"></div>
+    <select id="tl-phase" aria-label="Phase"></select>
+    <select id="tl-person" aria-label="Person"></select>
+    <div class="grp" id="tl-venue"></div>
+    <div class="grp" id="tl-group"></div>
+    <input type="search" id="tl-q" placeholder="Search tasks" aria-label="Search tasks">
+    <button class="btn" onclick="window.print()">Print</button>
+  </div></div>
+  <main class="tl" id="tl"></main>
+</section>
+
+<script>
+const DATA = {"roles": [{"name": "Finalists", "pic": "8 startups"}, {"name": "Semi-finalists", "pic": "13 startups"}, {"name": "Showrunner", "pic": "Melissa & Wayne, Randall (when Wayne with judges)"}, {"name": "Judges Management", "pic": "Wayne, Joshua, Ian"}, {"name": "GOH Management", "pic": "Sharine (MPA), Joshua (NUS)"}, {"name": "Sponsors Management", "pic": "Yi Fang"}, {"name": "Start-ups Management", "pic": "Randall (SPC2026), Danial (Landing Pad)"}, {"name": "Registration & Exhibition", "pic": "Selvi, Danial, Randall, Ian"}, {"name": "Marketing", "pic": "Jacqueline + Vicinity"}, {"name": "AV Team", "pic": "Sheraton Towers (Multi Image)"}, {"name": "Timekeeper (tagged to Startup Management)", "pic": "B71 Linh"}, {"name": "Registration", "pic": "MPA Chloe"}, {"name": "Timekeeper", "pic": "B71 Linh (tagged to Start-ups Management)"}, {"name": "Emcee", "pic": "Ruomei"}], "rows": [{"day": "10 Nov", "start": 960, "seg": "Pre-GC Setup", "loc": null, "rem": null, "end": 990, "tasks": [{"roles": [2, 3, 4, 5, 6, 7], "text": "Transport logistics for GC", "span": 1}, {"roles": [9], "text": "Setup of AV & layout", "span": 1}], "phase": "Setup"}, {"day": "10 Nov", "start": 990, "seg": "Pre-GC Setup", "loc": null, "rem": null, "end": 1020, "tasks": [{"roles": [2, 3, 4, 5, 6, 7], "text": "Walk through of event venue (with MPA or MOT staff if required)", "span": 1}, {"roles": [9], "text": "Review AV and layout for main event\nTest all slides, music, lights, event filming, and cues", "span": 1}], "phase": "Setup"}, {"day": "10 Nov", "start": 1020, "seg": "Pre-GC Setup", "loc": null, "rem": null, "end": 1170, "tasks": [{"roles": [2, 3, 4, 5], "text": "Review AV and layout for main event\nTest all slides, music, lights, event filming, and cues", "span": 1}, {"roles": [7], "text": "Label all VIP & startup seats", "span": 1}], "phase": "Setup"}, {"day": "10 Nov", "start": 1170, "seg": "End rehearsals", "loc": null, "rem": null, "end": null, "tasks": [{"roles": [2, 3, 4, 5], "text": "End rehearsal", "span": 1}, {"roles": [8], "text": "End rehearsal", "span": 1}, {"roles": [9], "text": "End rehearsal", "span": 1}, {"roles": [10], "text": "End rehearsal", "span": 1}], "phase": "Setup"}, {"day": "11 Nov", "start": 480, "seg": "Reporting", "loc": null, "rem": null, "end": 490, "tasks": [{"roles": [2, 3, 4, 5, 6, 7], "text": "Report for rehearsal, Conduct / attend briefing", "span": 1}, {"roles": [9], "text": "Activate AV & layout", "span": 1}], "phase": "Rehearsals"}, {"day": "11 Nov", "start": 490, "seg": "Rehearsals & Prep", "loc": null, "rem": null, "end": 510, "tasks": [{"roles": [2, 3, 4, 5], "text": "Review AV and layout for main event\nTest all slides, music, lights, event filming, and cues", "span": 1}, {"roles": [7], "text": "Label all VIP & startup seats", "span": 1}, {"roles": [9], "text": "Review AV and layout for main event\nTest all slides, music, lights, event filming, and cues", "span": 1}], "phase": "Rehearsals"}, {"day": "11 Nov", "start": 510, "seg": "Rehearsals & Prep", "loc": null, "rem": null, "end": 570, "tasks": [{"roles": [1], "text": "Report for briefing & rehearsal", "span": 1}, {"roles": [2], "text": "Briefings and rehearsals", "span": 3, "until": 690}, {"roles": [3], "text": "Check on judging room (Pearl Room)", "span": 1}, {"roles": [4], "text": "Check on GOH room (Pearl Room)\nCheck rostrum", "span": 1}, {"roles": [6], "text": "Gather semi-finalsts for rehearsal", "span": 1}, {"roles": [7], "text": "Prep registration table & exhibition area set up", "span": 1}, {"roles": [8], "text": "Report for briefing & rehearsal", "span": 2, "until": 660}, {"roles": [9], "text": "Briefings and rehearsals", "span": 3, "until": 690}], "phase": "Rehearsals"}, {"day": "11 Nov", "start": 570, "seg": "Rehearsals & Prep", "loc": null, "rem": null, "end": 660, "tasks": [{"roles": [0], "text": "Report for briefing & rehearsal", "span": 1}, {"roles": [1], "text": "End rehearsal\nSet up for MarineTech Exhibition", "span": 1}, {"roles": [3], "text": "Set up laptops for judges, check on judging system", "span": 1}, {"roles": [5], "text": "Set up sponsor booths in ballroom (if any)", "span": 1}, {"roles": [6], "text": "Gather finalists for rehearsal", "span": 1}, {"roles": [7], "text": "Link up with Eventnook staff for booth set-up and PRE PRINT VIPs & Startups", "span": 1}], "phase": "Rehearsals"}, {"day": "11 Nov", "start": 660, "seg": "Rehearsals & Prep", "loc": null, "rem": null, "end": 690, "tasks": [{"roles": [0], "text": "End rehearsal\nSet up for MarineTech Exhibition", "span": 1}, {"roles": [7], "text": "Briefing for volunteers\nPass badges to startups\nCheck on food set-up in exhibition area", "span": 1}, {"roles": [10], "text": "Report for briefing & rehearsal", "span": 1}, {"roles": [11], "text": "Report for briefing & rehearsal", "span": 1}, {"roles": [12], "text": "Report for briefing & rehearsal", "span": 1}, {"roles": [13], "text": "Report for briefing & rehearsal", "span": 1}], "phase": "Rehearsals"}, {"day": "11 Nov", "start": 690, "seg": "End rehearsals", "loc": null, "rem": null, "end": null, "tasks": [{"roles": [2, 3, 4, 5], "text": "End rehearsal", "span": 1}, {"roles": [8], "text": "End rehearsal", "span": 1}, {"roles": [9], "text": "End rehearsal", "span": 1}, {"roles": [10], "text": "End rehearsal", "span": 1}, {"roles": [13], "text": "End rehearsal", "span": 1}], "phase": "Rehearsals"}, {"day": "11 Nov", "start": 690, "seg": "Start registration", "loc": "Foyer", "rem": "MarineTech Showcase to be ready", "end": 705, "tasks": [{"roles": [7], "text": "Open registration", "span": 1}, {"roles": [10], "text": "Lunch Break", "span": 1}, {"roles": [11], "text": "Open registration", "span": 1}, {"roles": [12], "text": "Lunch Break", "span": 1}], "phase": "Registration & semi-finals"}, {"day": "11 Nov", "start": 705, "seg": "Start lunch", "loc": "Ballroom 3 & 4 + Foyer", "rem": "Standby to open lunch at 11.30am", "end": 750, "tasks": [{"roles": [0], "text": "Lunch Break", "span": 1}, {"roles": [1], "text": "Standby for pitching (mic only, no lapel)", "span": 1}, {"roles": [2], "text": "Remain in Main Event area, commence show runner duties (ie adjust schedule accordingly)", "span": 1}, {"roles": [3], "text": "Lunch Break", "span": 1}, {"roles": [4], "text": "Lunch Break", "span": 1}, {"roles": [5], "text": "Lunch Break", "span": 1}, {"roles": [7], "text": "Open registration\nProvide sitrep on registration figures", "span": 1}, {"roles": [8], "text": "Start event filming at 11.45AM", "span": 1}, {"roles": [11], "text": "Manage registration", "span": 3, "until": 805}, {"roles": [12], "text": "Ian to support with ushering until judges arrive", "span": 1}, {"roles": [13], "text": "Lunch Break", "span": 1}], "phase": "Registration & semi-finals"}, {"day": "11 Nov", "start": 740, "seg": "All to start pushing people into room", "loc": null, "rem": null, "end": 750, "tasks": [], "phase": "Registration & semi-finals"}, {"day": "11 Nov", "start": 750, "seg": "Semi-Finalists Pitches (13 pitches; 3 mins + 30 sec changeover)", "loc": "Ballroom 1 & 2", "rem": "Start video recording\nDo NOT man booths during semi-finals pitch\nReduced from 14 to 13 Semi-Finalist", "end": 805, "tasks": [{"roles": [0], "text": "Sit in for semi-finals pitch\n\nDo NOT man booths during semi-finals pitch", "span": 1}, {"roles": [1], "text": "Once done, go for lunch break\n\nDo NOT man booths during semi-finals pitch", "span": 1}, {"roles": [2], "text": "10 pitches; 3 mins + 30 sec changeover", "span": 1}, {"roles": [3], "text": "Ensure all judges have registered before start of GC", "span": 1}, {"roles": [4], "text": "Update team on GOH movements\n\nEnsure NUS & MPA reps are present and ready when called", "span": 1}, {"roles": [6], "text": "Usher semi-finalists to designated seats by 12:30pm\n\nEnsure that at least 2 are mic-ed up at any one point", "span": 1}, {"roles": [7], "text": "Usher crowd from lunch tables to ballroom", "span": 1}, {"roles": [9], "text": "Follow showcaller sheet here", "span": 14, "until": 965}, {"roles": [10], "text": "Ring bell for all pitches (3mins)", "span": 1}, {"roles": [12], "text": "Usher crowd from lunch tables to ballroom", "span": 1}, {"roles": [13], "text": "Follow showcaller sheet here", "span": 14, "until": 965}], "phase": "Registration & semi-finals"}, {"day": "11 Nov", "start": 805, "seg": "Break & Announcement to take seats for GC", "loc": "Ballroom 1 & 2", "rem": "VIP/GOH holding room if early: Pearl Room", "end": 815, "tasks": [{"roles": [0, 1], "text": "All to be seated", "span": 1}, {"roles": [2], "text": "Usher finalists to designated seats by 1:15PM", "span": 1}, {"roles": [3], "text": "Usher judges to judging room (Pearl Room) for handshake and briefing", "span": 1}, {"roles": [4], "text": "Welcome GOH to Pearl Room", "span": 1}, {"roles": [6], "text": "Usher finalists to designated seats by 1:15PM\n\nEnsure that at least 2 are mic-ed up at any one point", "span": 1}, {"roles": [7], "text": "Lunch Break", "span": 1}, {"roles": [8], "text": "Event coverage", "span": 7, "until": 915}, {"roles": [11], "text": "Lunch Break", "span": 1}, {"roles": [12], "text": "Usher finalists to designated seats by 1:15PM", "span": 1}], "phase": "Registration & semi-finals"}, {"day": "11 Nov", "start": 815, "seg": "START OF MAIN EVENT\nEmcee Intro, PIER71 introduction (Video)", "loc": "Ballroom 1 & 2", "rem": null, "end": 825, "tasks": [{"roles": [3], "text": "Ensure judges are seated with audience (NOT at the judging table)", "span": 2, "until": 833}, {"roles": [4], "text": "Ushering of GOH", "span": 4, "until": 840}, {"roles": [5], "text": "Usher them to seats", "span": 1}, {"roles": [7], "text": "Manage registration (Selvi only, rest to be in Ballroom/respective roles)", "span": 5, "until": 878}, {"roles": [11], "text": "Manage registration", "span": 5, "until": 878}, {"roles": [12], "text": "Continue to usher crowd until registration closes", "span": 5, "until": 878}], "phase": "Main event"}, {"day": "11 Nov", "start": 825, "seg": "Opening Remarks by GOH (MPA CE)", "loc": "Ballroom 1 & 2", "rem": "Backup: DCE to give opening", "end": 833, "tasks": [{"roles": [2], "text": "Remove rostrum after speech", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 833, "seg": "Group Shot (all attendees)", "loc": "Ballroom 1 & 2", "rem": null, "end": 835, "tasks": [{"roles": [2], "text": "Push attendees from left and right towards the center", "span": 1}, {"roles": [3], "text": "Right after group photo, usher judges to the judging tables", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 835, "seg": "Emcee: Intro to Grand Finals and Format", "loc": "Ballroom 1 & 2", "rem": null, "end": 840, "tasks": [{"roles": [0], "text": "Mic up 1st & 2nd startup presenters 5 mins before pitches", "span": 3, "until": 915}, {"roles": [3], "text": "Check on judging system, reminder judges to key in scores\n\nStandby to answer qns from judges", "span": 2, "until": 878}], "phase": "Main event"}, {"day": "11 Nov", "start": 840, "seg": "Startup Pitches: 4 x 8mins", "loc": "Ballroom 1 & 2", "rem": "If 8 finalists: 3 min Q&A\nIf 9 finalists: 2.5 min Q&A & 45 sec changeover\nIf 10 finalists: 2 min Q&A & 45 sec changeover", "end": 878, "tasks": [{"roles": [2], "text": "4 x 8mins (4 mins + 3 mins Q&A + 1 min changeover)", "span": 1}, {"roles": [4], "text": "Stand by near GOH", "span": 3, "until": 945}, {"roles": [10], "text": "Ring bell for all pitches (4 mins), as well as end of Q&A (3 mins)", "span": 2, "until": 915}], "phase": "Main event"}, {"day": "11 Nov", "start": 878, "seg": "Scale-up Pitches: 4 x 8mins\nClose registration", "loc": "Ballroom 1 & 2", "rem": "If 8 finalists: 3 min Q&A\nIf 9 finalists: 2.5 min Q&A & 45 sec changeover\nIf 10 finalists: 2 min Q&A & 45 sec changeover\n\nClose registration tables", "end": 915, "tasks": [{"roles": [2], "text": "4 x 8mins (4 mins + 3 mins Q&A + 1 min changeover)", "span": 1}, {"roles": [3], "text": "Wayne: tabulate scores into scoring sheets", "span": 1}, {"roles": [7], "text": "Close registration", "span": 1}, {"roles": [11], "text": "Close registration\nEnd of Engagement", "span": 1}, {"roles": [12], "text": "Close registration\nEnd of Engagement", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 915, "seg": "Judges deliberation", "loc": "Pearl Room (judges)", "rem": "Judges leave to go separate room", "end": 945, "tasks": [{"roles": [0, 1], "text": "Can use this time to complete any remaining setup for exhibition, return to ballroom before sponsor prize giving", "span": 1}, {"roles": [2], "text": "Ensure all prize cheques and trophies are ready off stage", "span": 1}, {"roles": [3], "text": "Usher judges to judging room", "span": 1}, {"roles": [5], "text": "Confirm all sponsor prizes\nInform Showrunner & Emcee & AV", "span": 1}, {"roles": [8], "text": "Ensure all prize cheques and trophies are ready off stage", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 915, "seg": "Cut off for People Choice Award\nAcknowledgement (3 mins)\nOneCareX CSM presentation (20 mins)\nPIER71 CTA (2 mins)", "loc": "Ballroom 1 & 2", "rem": "CTA for Innovation Partners/Corporate sponsor for next year\nCTA apply for SPC next year\nSMW annoucement\n1 min buffer between each segment", "end": 940, "tasks": [{"roles": [3], "text": "Confirm all top prizes + any special mention \nInform Showrunner & Emcee & AV\nUsher judge back to ballroom ASAP", "span": 3, "until": 955}], "phase": "Main event"}, {"day": "11 Nov", "start": 940, "seg": "Peoples Choice Award + trophy giving (Dr Sian)", "loc": "Ballroom 1 & 2", "rem": "Emcee to announce People's Choice Award", "end": 945, "tasks": [{"roles": [6], "text": "Support + give trophy", "span": 1}, {"roles": [8], "text": "Coordinate photo-taking", "span": 4, "until": 965}], "phase": "Main event"}, {"day": "11 Nov", "start": 945, "seg": "Sponsors prize giving", "loc": "Ballroom 1 & 2", "rem": "1 min buffer between each segment\nEnsure all startups seated for prize giving\nEnsure all judges have returned to ballroom", "end": 955, "tasks": [{"roles": [2], "text": "Hand cheque + trophy to prize presenters", "span": 1}, {"roles": [4], "text": "Stand by near GOH", "span": 2, "until": 960}, {"roles": [5], "text": "Usher sponsors up and down the stage", "span": 1}, {"roles": [6], "text": "Hand cheque + trophy to prize presenters", "span": 1}, {"roles": [7], "text": "Check on food set-up in exhibition area", "span": 1}, {"roles": [10], "text": "Hand presentation certificates to prize presenters", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 955, "seg": "Judges prize giving", "loc": "Ballroom 1 & 2", "rem": null, "end": 960, "tasks": [{"roles": [2], "text": "Hand cheque + trophy to prize presenters", "span": 1}, {"roles": [3], "text": "Usher judges onto stage", "span": 1}, {"roles": [5], "text": "Hand cheque + trophy to prize presenters", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 960, "seg": "Picture taking", "loc": "Ballroom 1 & 2", "rem": "Standby to open tea break at 4pm", "end": 965, "tasks": [{"roles": [2, 3], "text": "Usher startups to respective standing positions", "span": 1}, {"roles": [5], "text": "Usher startups to respective standing positions", "span": 1}], "phase": "Main event"}, {"day": "11 Nov", "start": 965, "seg": "END OF MAIN EVENT\nStart of Exhibition & Teabreak", "loc": "Ballroom 3 & 4 + Foyer", "rem": "End video recording", "end": 1025, "tasks": [{"roles": [0], "text": "Proceed outside for exihibition\nFinalists to get ready for GOH tour (if any)", "span": 1}, {"roles": [1], "text": "Proceed outside for exihibition", "span": 1}, {"roles": [2, 3], "text": "Commence tear down of ballroom area", "span": 1}, {"roles": [4], "text": "Begin GOH tour", "span": 1}, {"roles": [5], "text": "Begin GOH tour", "span": 1}, {"roles": [7], "text": "Commence tear down of ballroom area", "span": 1}, {"roles": [8], "text": "Prepare photos for press release", "span": 1}, {"roles": [9], "text": "End of Engagement", "span": 1}, {"roles": [10], "text": "End of Engagement", "span": 1}, {"roles": [13], "text": "End of Engagement", "span": 1}], "phase": "Exhibition & tear-down"}, {"day": "11 Nov", "start": 1025, "seg": "End of exhibition\nCommence tear down\nTransfer to MOL", "loc": null, "rem": null, "end": 1085, "tasks": [{"roles": [0, 1], "text": "Commence tear down in exhibition area\nEnd of Engagement", "span": 1}, {"roles": [2, 3, 4, 5, 6, 7, 8], "text": "Commence tear down in exhibition area\nEnd of Engagement", "span": 1}], "phase": "Exhibition & tear-down"}], "notes": [{"roles": [6], "text": "Mel & Dan: to gather all who wants to board the bus to MOL"}, {"roles": [7], "text": "Carpark coupons: VIPs handled by Dan, others Selvi"}]};
+const ROLES = DATA.roles, ROWS = DATA.rows;
+const GROUP = i => i<=1 ? 0 : i<=8 ? 1 : 2;
+const GROUP_NAMES = ["Start-ups","Organising team","Event support"];
+const PEOPLE = [
+  ["Melissa",[2],["Melissa","Mel"]],["Wayne",[2,3],["Wayne"]],["Randall",[2,6,7],["Randall"]],
+  ["Joshua",[3,4],["Joshua"]],["Ian",[3,7],["Ian"]],["Sharine",[4],["Sharine"]],["Yi Fang",[5],["Yi Fang"]],
+  ["Danial",[6,7],["Danial","Dan"]],["Selvi",[7],["Selvi"]],["Jacqueline",[8],["Jacqueline"]],
+  ["Sheraton Towers AV",[9],[]],["Linh (Timekeeper)",[10],["Linh"]],["Chloe (MPA)",[11],["Chloe"]],
+  ["Timothy (MPA)",[12],["Timothy"]],["Ruomei (Emcee)",[13],["Ruomei"]],
+  ["Finalists",[0],[]],["Semi-finalists",[1],[]]
+];
+const fmt = m => { if(m==null) return ""; let h=Math.floor(m/60), mm=m%60, ap=h>=12?"PM":"AM"; h=h%12||12; return h+":"+String(mm).padStart(2,"0")+" "+ap; };
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const titleOf = s => s.split("\n")[0];
+const subOf = s => s.split("\n").slice(1).join("\n");
+const PHASES = [...new Set(ROWS.map(r=>r.phase))];
+const VENUES = [...new Set(ROWS.map(r=>r.loc).filter(Boolean))];
+const isKey = r => /START OF MAIN EVENT|END OF MAIN EVENT/.test(r.seg);
+
+function taskMatchesPerson(t, p){
+  if(p==null) return true;
+  const [,roles,aliases] = PEOPLE[p];
+  if(t.roles.some(i=>roles.includes(i))) return true;
+  return aliases.some(a=>new RegExp("\\b"+a+"\\b").test(t.text));
+}
+function picLine(t){ return t.roles.length>3 ? `All roles from ${ROLES[t.roles[0]].name} to ${ROLES[t.roles[t.roles.length-1]].name}` : t.roles.map(i=>ROLES[i].name).join(" + "); }
+function picNames(t){ if(t.roles.length>3) return ""; return t.roles.map(i=>ROLES[i].pic).filter(Boolean).join("; "); }
+
+/* home */
+(function(){
+  const day = ROWS.filter(r=>r.day==="11 Nov" && r.start!=null);
+  const s = Math.min(...day.map(r=>r.start)), e = Math.max(...day.map(r=>r.end||r.start));
+  const parts = PHASES.filter(p=>p!=="Setup").map(p=>{
+    const rs = day.filter(r=>r.phase===p); const a=Math.min(...rs.map(r=>r.start)), b=Math.max(...rs.map(r=>r.end||r.start));
+    return {p,a,b};
+  });
+  document.getElementById("strip").innerHTML = parts.map(x=>
+    `<div class="${x.p==='Main event'?'main':''}" style="flex:${Math.max(x.b-x.a,30)}"><b>${esc(x.p)}</b>${fmt(x.a)}</div>`).join("");
+  const venues = VENUES.join(", ");
+  document.getElementById("facts").innerHTML =
+    `<div><h3>Main event</h3><p>${fmt(ROWS.find(r=>/START OF MAIN/.test(r.seg)).start)} to ${fmt(ROWS.find(r=>/END OF MAIN/.test(r.seg)).start)}, ${esc(ROWS.find(r=>/START OF MAIN/.test(r.seg)).loc)}</p></div>
+     <div><h3>Rooms in use</h3><p>${esc(venues)}</p></div>
+     <div><h3>Roles</h3><p>${ROLES.length-2} roles, plus ${ROLES[0].pic.replace(' startups','')} finalists and ${ROLES[1].pic.replace(' startups','')} semi-finalists</p></div>`;
+})();
+
+/* overview */
+const ov = {day:"11 Nov", person:null};
+function segButtons(el, opts, get, set){
+  el.innerHTML = opts.map(o=>`<button type="button" data-v="${esc(o[0])}">${esc(o[1])}</button>`).join("");
+  const sync=()=>el.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.v===String(get())));
+  el.onclick = e=>{ const b=e.target.closest("button"); if(!b) return; set(b.dataset.v); sync(); };
+  sync();
+}
+function personSelect(el, label, onchange){
+  el.innerHTML = `<option value="">${label}</option>` + PEOPLE.map((p,i)=>`<option value="${i}">${esc(p[0])}</option>`).join("");
+  el.onchange = ()=>onchange(el.value===""?null:+el.value);
+}
+function renderOverview(){
+  const rows = ROWS.filter(r=>r.day===ov.day);
+  const g = document.getElementById("ov-grid");
+  g.style.gridTemplateColumns = `170px repeat(${ROLES.length}, minmax(150px,1fr))`;
+  let html = `<div class="h corner" style="grid-row:1;grid-column:1"><b>Time</b><small>Segment</small></div>`;
+  ROLES.forEach((r,i)=>{ html += `<div class="h g${GROUP(i)}" style="grid-row:1;grid-column:${i+2}"><b>${esc(r.name)}</b><small>${esc(r.pic)}</small></div>`; });
+  // build line numbers, inserting phase rows
+  let line = 2, lineOf = [], lastPhase=null;
+  rows.forEach((r,k)=>{ if(r.phase!==lastPhase){ html += `<div class="ph" style="grid-row:${line}"><span>${esc(r.phase)}</span></div>`; line++; lastPhase=r.phase; } lineOf[k]=line++; });
+  rows.forEach((r,k)=>{
+    html += `<div class="tc" style="grid-row:${lineOf[k]};grid-column:1"><span class="t">${fmt(r.start)}</span><span class="s">${esc(r.seg)}</span>${r.loc?`<span class="l">${esc(r.loc)}</span>`:""}</div>`;
+    for(let i=0;i<ROLES.length;i++) html += `<div class="cell" style="grid-row:${lineOf[k]};grid-column:${i+2}"></div>`;
+  });
+  rows.forEach((r,k)=>r.tasks.forEach(t=>{
+    const endLine = lineOf[k+t.span-1];
+    const on = taskMatchesPerson(t, ov.person);
+    html += `<div class="task g${GROUP(t.roles[0])}${t.span>1?' span':''}${on?'':' dim'}" style="grid-row:${lineOf[k]}/${endLine+1};grid-column:${t.roles[0]+2}/${t.roles[t.roles.length-1]+3}">${esc(t.text)}</div>`;
+  }));
+  g.innerHTML = html;
+  g.querySelectorAll(".h").forEach((h,idx)=>{ if(idx===0) return; const i=idx-1;
+    h.classList.toggle("dim", ov.person!=null && !PEOPLE[ov.person][1].includes(i)); });
+}
+segButtons(document.getElementById("ov-day"), [["10 Nov","10 Nov setup"],["11 Nov","11 Nov event day"]], ()=>ov.day, v=>{ov.day=v;renderOverview();});
+personSelect(document.getElementById("ov-person"), "Everyone", v=>{ov.person=v;renderOverview();});
+
+/* timeline */
+const tl = {day:"All", phase:"", person:null, venues:new Set(), groups:new Set(), q:""};
+function hl(s){ s=esc(s); if(!tl.q) return s; const re=new RegExp("("+tl.q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); return s.replace(re,"<mark>$1</mark>"); }
+function renderTimeline(){
+  const q = tl.q.toLowerCase();
+  let html = "", lastPhase=null, count=0;
+  ROWS.forEach(r=>{
+    if(tl.day!=="All" && r.day!==tl.day) return;
+    if(tl.phase && r.phase!==tl.phase) return;
+    if(tl.venues.size && !tl.venues.has(r.loc)) return;
+    let tasks = r.tasks.filter(t=>taskMatchesPerson(t,tl.person) && (!tl.groups.size || t.roles.some(i=>tl.groups.has(GROUP(i)))));
+    const filtering = tl.person!=null || tl.groups.size;
+    const rowText = (r.seg+" "+(r.loc||"")+" "+(r.rem||"")).toLowerCase();
+    if(q){ const tm = tasks.filter(t=>(t.text+" "+picLine(t)+" "+picNames(t)).toLowerCase().includes(q)); if(!rowText.includes(q)) tasks = tm; if(!rowText.includes(q) && !tm.length) return; }
+    if(filtering && !tasks.length) return;
+    if(r.phase!==lastPhase){ html += `<div class="phase"><h2>${esc(r.phase)}</h2><span>${esc(r.day)} 2026</span></div>`; lastPhase=r.phase; }
+    count++;
+    const dur = r.end!=null ? r.end-r.start : null;
+    html += `<article class="row${isKey(r)?' key':''}">
+      <div class="when"><div class="t">${fmt(r.start)}</div>${r.end!=null?`<div class="e">to ${fmt(r.end)}</div>`:""}${dur?`<span class="d">${dur} min</span>`:""}</div>
+      <div class="what"><h3>${hl(titleOf(r.seg))}</h3>${subOf(r.seg)?`<p class="sub">${hl(subOf(r.seg))}</p>`:""}
+        ${r.loc?`<span class="loc">${esc(r.loc)}</span>`:""}
+        ${r.rem?`<p class="rem">${hl(r.rem)}</p>`:""}
+        ${tasks.length?`<ul class="tasks">${tasks.map(t=>`<li class="g${GROUP(t.roles[0])}"><span class="who">${esc(picLine(t))}</span>${picNames(t)?`<span class="pic">${esc(picNames(t))}</span>`:""}<div class="txt">${hl(t.text)}</div>${t.until?`<span class="until">Through to ${fmt(t.until)}</span>`:""}</li>`).join("")}</ul>`:""}
+      </div></article>`;
+  });
+  if(!count) html = `<p class="empty">No segments match these filters. Clear a filter or the search box to see more.</p>`;
+  if(tl.day!=="10 Nov" && !tl.phase && !tl.venues.size){
+    const ns = DATA.notes.filter(t=>taskMatchesPerson(t,tl.person) && (!q || (t.text+picLine(t)).toLowerCase().includes(q)));
+    if(ns.length) html += `<div class="phase notes"><h2>Logistics notes</h2></div><ul class="tasks">${ns.map(t=>`<li class="g${GROUP(t.roles[0])}"><span class="who">${esc(picLine(t))}</span><div class="txt">${hl(t.text)}</div></li>`).join("")}</ul>`;
+  }
+  document.getElementById("tl").innerHTML = html;
+}
+segButtons(document.getElementById("tl-day"), [["All","All"],["10 Nov","10 Nov"],["11 Nov","11 Nov"]], ()=>tl.day, v=>{tl.day=v;renderTimeline();});
+const ph = document.getElementById("tl-phase");
+ph.innerHTML = `<option value="">All phases</option>`+PHASES.map(p=>`<option>${esc(p)}</option>`).join("");
+ph.onchange=()=>{tl.phase=ph.value;renderTimeline();};
+personSelect(document.getElementById("tl-person"), "All people", v=>{tl.person=v;renderTimeline();});
+function chips(el,label,items,set){
+  el.innerHTML = `<span>${label}</span>`+items.map((x,i)=>`<button type="button" class="chip" aria-pressed="false" data-i="${i}">${esc(x)}</button>`).join("");
+  el.onclick=e=>{const b=e.target.closest(".chip"); if(!b) return; const on=b.getAttribute("aria-pressed")!=="true"; b.setAttribute("aria-pressed",on); set(+b.dataset.i,on); renderTimeline();};
+}
+chips(document.getElementById("tl-venue"),"Venue",VENUES,(i,on)=>{on?tl.venues.add(VENUES[i]):tl.venues.delete(VENUES[i]);});
+chips(document.getElementById("tl-group"),"Team",GROUP_NAMES,(i,on)=>{on?tl.groups.add(i):tl.groups.delete(i);});
+document.getElementById("tl-q").oninput=e=>{tl.q=e.target.value.trim();renderTimeline();};
+
+/* routing */
+function route(){
+  const h = location.hash.replace("#","");
+  const v = h==="overview"||h==="timeline" ? h : "home";
+  document.querySelectorAll(".view").forEach(s=>s.classList.toggle("on", s.id==="v-"+v));
+  if(v==="overview") renderOverview(); if(v==="timeline") renderTimeline();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route); route();
+</script>
+</body>
+</html>
